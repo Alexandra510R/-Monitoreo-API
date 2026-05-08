@@ -63,13 +63,12 @@ monitoring-project/
 git clone https://github.com/Alexandra510R/-Monitoreo-API
 cd monitoring-project
 ```
-
 ### 2. Levantar el stack completo
 
 ```bash
 docker compose up --build -d
 ```
-
+![alt text](<Evidencias/Configuracion de docker.JPG>)
 Esperar aproximadamente 20 segundos para que todos los servicios inicien.
 
 ### 3. Verificar que los servicios estén corriendo
@@ -77,6 +76,7 @@ Esperar aproximadamente 20 segundos para que todos los servicios inicien.
 ```bash
 docker compose ps
 ```
+![alt text](<Evidencias/Dcoker corriendo.JPG>)
 
 Deben aparecer tres servicios en estado `running`: `api`, `prometheus` y `grafana`.
 
@@ -85,9 +85,12 @@ Deben aparecer tres servicios en estado `running`: `api`, `prometheus` y `grafan
 | Servicio    | URL                           | Credenciales     |
 |-------------|-------------------------------|------------------|
 | API Docs    | http://localhost:3000/docs    | —                |
+![alt text](Evidencias/Api.JPG)
 | API Metrics | http://localhost:3000/metrics | —                |
 | Prometheus  | http://localhost:9090         | —                |
+![alt text](Evidencias/Prometheus.JPG)
 | Grafana     | http://localhost:3001         | admin / admin123 |
+![alt text](Evidencias/Gafana.JPG)
 
 En Grafana ir a: **Dashboards → API Monitoring Dashboard**
 
@@ -103,6 +106,7 @@ python Script/traffic.py --rps 3
 # Tráfico por tiempo limitado (5 minutos)
 python Script/traffic.py --rps 5 --duration 300
 ```
+![alt text](<Evidencias/Script corriendo.JPG>)
 
 También se puede consumir la API manualmente desde http://localhost:3000/docs usando el botón **Try it out** en cada endpoint.
 
